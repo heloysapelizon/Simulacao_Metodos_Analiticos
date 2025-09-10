@@ -1,15 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=== Simulação de filas ===\n");
+        System.out.println("=== Simulação de Filas em Tandem ===\n");
 
-        // Simulação G/G/1/5
-        Fila fila1 = new Fila(1, 5);
-        fila1.simular();
-        fila1.imprimirResultados();
+        Simulador simulador = new Simulador(1.0, 4.0);
 
-        // Simulação G/G/2/5
-        Fila fila2 = new Fila(2, 5);
-        fila2.simular();
-        fila2.imprimirResultados();
+        simulador.adicionarFila(new Fila(0, 2, 3, 3.0, 4.0));
+
+        simulador.adicionarFila(new Fila(1, 1, 5, 2.0, 3.0));
+
+        simulador.simular();
     }
 }
