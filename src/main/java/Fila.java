@@ -1,12 +1,10 @@
 public class Fila {
-    // Parâmetros da Fila
     public final int id;
     public final int servidores;
     public final int capacidade;
     public final double minAtendimento;
     public final double maxAtendimento;
 
-    // Variáveis de Estado e Estatísticas
     public int clientesNoSistema;
     public int clientesPerdidos;
     public double[] temposPorEstado;
@@ -31,7 +29,6 @@ public class Fila {
         }
     }
 
-    // Acumula o tempo gasto no estado atual da fila
     public void acumulaTempo(double tempoGlobal) {
         if (clientesNoSistema <= capacidade) {
             temposPorEstado[clientesNoSistema] += tempoGlobal - tempoUltimoEvento;
