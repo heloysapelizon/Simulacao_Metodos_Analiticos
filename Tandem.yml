@@ -1,0 +1,43 @@
+!PARAMETERS
+rndnumbersPerSeed: 100000
+seeds: 
+- 1
+
+arrivals: 
+   FILA1: 3.0
+
+queues: 
+   FILA1: 
+      servers: 1
+      capacity: 99999
+      minArrival: 2.0
+      maxArrival: 4.0
+      minService: 1.0
+      maxService: 2.0
+   FILA2: 
+      servers: 2
+      capacity: 5
+      minService: 4.0
+      maxService: 6.0
+   FILA3: 
+      servers: 2
+      capacity: 10
+      minService: 5.0
+      maxService: 15.0
+
+network: 
+-  source: FILA1
+   target: FILA2
+   probability: 0.8
+-  source: FILA1
+   target: FILA3
+   probability: 0.2
+-  source: FILA2
+   target: FILA1
+   probability: 0.5
+-  source: FILA2
+   target: FILA3
+   probability: 0.3
+-  source: FILA3
+   target: FILA1
+   probability: 0.3
